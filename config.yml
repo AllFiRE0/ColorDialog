@@ -92,6 +92,49 @@ integrations:
     # Использовать LuckPerms для проверки прав
     use-permissions: true
 
+# Настройки интеграций
+integrations:
+  # PlaceholderAPI интеграция
+  placeholderapi:
+    enabled: true
+    # Использовать собственные плейсхолдеры если PlaceholderAPI недоступен
+    fallback-to-custom: true
+    # Кэшировать результаты плейсхолдеров
+    cache-results: true
+    # Время кэширования в миллисекундах
+    cache-time: 5000
+  
+  # LuckPerms интеграция
+  luckperms:
+    enabled: true
+    # Автоматически обновлять префиксы/суффиксы при изменении групп
+    auto-update: true
+    # Использовать асинхронные операции
+    async-operations: true
+
+# Настройки интеграций
+integrations:
+  # PlaceholderAPI интеграция
+  placeholderapi:
+    enabled: true
+    # Автоматически заменять плейсхолдеры в меню
+    auto-replace: true
+    # Кэшировать результаты плейсхолдеров
+    cache-results: true
+    # Время кэширования в секундах
+    cache-time: 30
+  
+  # LuckPerms интеграция
+  luckperms:
+    enabled: true
+    # Автоматически обновлять префиксы/суффиксы
+    auto-update: true
+    # Использовать мета-данные из LuckPerms
+    use-meta: true
+    # Приоритет для префиксов/суффиксов
+    prefix-priority: 100
+    suffix-priority: 100
+
 # Настройки логирования
 logging:
   # Уровень логирования (DEBUG, INFO, WARN, ERROR)
@@ -105,3 +148,6 @@ logging:
   
   # Логировать интеграции
   log-integrations: true
+  
+  # Логировать работу с плейсхолдерами
+  log-placeholders: false

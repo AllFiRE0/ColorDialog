@@ -95,4 +95,16 @@ public class CustomUIPlugin extends JavaPlugin {
     public CustomUIPlaceholders getPlaceholderExpansion() {
         return placeholderExpansion;
     }
+    
+    public PlaceholderUtils getPlaceholderUtils() {
+        return placeholderUtils;
+    }
+    
+    public boolean isPlaceholderAPIAvailable() {
+        return getServer().getPluginManager().isPluginEnabled("PlaceholderAPI");
+    }
+    
+    public boolean isLuckPermsAvailable() {
+        return luckPermsIntegration.isEnabled();
+    }
 }

@@ -1,83 +1,87 @@
 # Примеры использования плейсхолдеров в конфигурации CustomUI
 
 # Основные плейсхолдеры игрока
-player_info:
-  name: "%customui_player_name%"
-  displayname: "%customui_player_displayname%"
-  uuid: "%customui_player_uuid%"
-  world: "%customui_player_world%"
-  health: "%customui_player_health%"
-  max_health: "%customui_player_max_health%"
-  food: "%customui_player_food%"
-  level: "%customui_player_level%"
-  exp: "%customui_player_exp%"
-  gamemode: "%customui_player_gamemode%"
-  ping: "%customui_player_ping%"
-  view_distance: "%customui_player_view_distance%"
+player_placeholders:
+  - "%player%"              # Имя игрока
+  - "%player_name%"         # Имя игрока (альтернатива)
+  - "%player_displayname%" # Отображаемое имя игрока
+  - "%player_uuid%"         # UUID игрока
+  - "%world%"               # Мир игрока
+  - "%health%"              # Здоровье игрока
+  - "%max_health%"          # Максимальное здоровье
+  - "%food%"                # Сытость игрока
+  - "%level%"               # Уровень игрока
+  - "%exp%"                 # Опыт игрока
+  - "%gamemode%"            # Режим игры
+  - "%ping%"                # Пинг игрока
+  - "%view_distance%"       # Дистанция видимости
 
 # LuckPerms плейсхолдеры
-luckperms_info:
-  prefix: "%customui_luckperms_prefix%"
-  suffix: "%customui_luckperms_suffix%"
-  primary_group: "%customui_luckperms_primary_group%"
-  groups: "%customui_luckperms_groups%"
-  weight: "%customui_luckperms_weight%"
-  
-  # Примеры мета-данных
-  meta_examples:
-    rank: "%customui_luckperms_meta_rank%"
-    balance: "%customui_luckperms_meta_balance%"
-    level: "%customui_luckperms_meta_level%"
-    
-  # Примеры проверки прав
-  permission_examples:
-    can_fly: "%customui_luckperms_permission_essentials.fly%"
-    can_gamemode: "%customui_luckperms_permission_essentials.gamemode%"
-    is_admin: "%customui_luckperms_permission_customui.admin%"
+luckperms_placeholders:
+  - "%prefix%"              # Префикс игрока
+  - "%suffix%"              # Суффикс игрока
+  - "%primary_group%"       # Основная группа
+  - "%groups%"              # Все группы игрока
+  - "%weight%"              # Вес группы
 
-# Серверные плейсхолдеры
-server_info:
-  name: "%customui_server_name%"
-  version: "%customui_server_version%"
-  online: "%customui_server_online%"
-  max_players: "%customui_server_max_players%"
-  tps: "%customui_server_tps%"
-  uptime: "%customui_server_uptime%"
+# Плейсхолдеры сервера
+server_placeholders:
+  - "%server_name%"         # Название сервера
+  - "%server_version%"      # Версия сервера
+  - "%server_motd%"         # MOTD сервера
+  - "%online%"              # Количество онлайн игроков
+  - "%max_players%"         # Максимальное количество игроков
+  - "%tps%"                 # TPS сервера
 
 # Плейсхолдеры времени
-time_info:
-  hour: "%customui_time_hour%"
-  minute: "%customui_time_minute%"
-  second: "%customui_time_second%"
-  year: "%customui_date_year%"
-  month: "%customui_date_month%"
-  day: "%customui_date_day%"
-  day_of_week: "%customui_date_day_of_week%"
+time_placeholders:
+  - "%time%"                # Текущее время
+  - "%date%"                # Текущая дата
+  - "%datetime%"            # Дата и время
+  - "%timestamp%"           # Временная метка
 
-# Плейсхолдеры меню
-menu_info:
-  count: "%customui_menu_count%"
-  list: "%customui_menu_list%"
+# PlaceholderAPI плейсхолдеры (если установлен)
+placeholderapi_examples:
+  - "%vault_eco_balance%"    # Баланс из Vault
+  - "%essentials_health%"   # Здоровье из Essentials
+  - "%essentials_food%"     # Сытость из Essentials
+  - "%essentials_gamemode%" # Режим игры из Essentials
+  - "%essentials_world%"    # Мир из Essentials
+  - "%essentials_world_time%" # Время мира из Essentials
+  - "%essentials_weather%"   # Погода из Essentials
+  - "%essentials_godmode%"  # Режим бога из Essentials
+  - "%essentials_fly%"      # Полет из Essentials
+  - "%essentials_vanish%"   # Невидимость из Essentials
+  - "%essentials_afk%"      # AFK статус из Essentials
+  - "%essentials_muted%"    # Муты из Essentials
+  - "%essentials_jailed%"   # Тюрьма из Essentials
+  - "%essentials_home%"     # Дом из Essentials
+  - "%essentials_balance%"  # Баланс из Essentials
+  - "%essentials_worth%"    # Стоимость инвентаря из Essentials
 
 # Примеры использования в меню
 menu_examples:
-  tab_header: "&6&l%customui_server_name%"
-  tab_footer: "&7Игрок: &f%customui_player_name% &7| Онлайн: &f%customui_server_online%/%customui_server_max_players%"
+  tab_header: "&6&l%server_name% &7- &f%player%"
+  tab_footer: "&7Онлайн: &a%online%&7/&c%max_players% &7| &f%time%"
   
-  chat_format: "&7[&6%customui_luckperms_prefix%&7] &f%customui_player_name%&7: &f%message%"
+  chat_format: "&7[&6%level%&7] %prefix%&f%player%&7: &f%message%"
   
-  scoreboard_title: "&6&l%customui_server_name%"
+  scoreboard_title: "&6&l%server_name%"
   scoreboard_lines:
     - "&7━━━━━━━━━━━━━━━━━━"
-    - "&6Игрок: &f%customui_player_name%"
-    - "&6Ранг: &f%customui_luckperms_primary_group%"
-    - "&6Уровень: &f%customui_player_level%"
-    - "&6Здоровье: &f%customui_player_health%/%customui_player_max_health%"
-    - "&6Пинг: &f%customui_player_ping%ms"
+    - "&6Игрок: &f%player%"
+    - "&6Группа: &f%primary_group%"
+    - "&6Уровень: &f%level%"
+    - "&6Здоровье: &f%health%&7/&f%max_health%"
+    - "&6Мир: &f%world%"
+    - "&7━━━━━━━━━━━━━━━━━━"
+    - "&7Время: &f%time%"
+    - "&7Онлайн: &a%online%&7/&c%max_players%"
+    - "&7TPS: &f%tps%"
     - "&7━━━━━━━━━━━━━━━━━━"
   
-  displayname_prefix: "%customui_luckperms_prefix%"
-  displayname_suffix: "%customui_luckperms_suffix%"
+  displayname_prefix: "%prefix%"
+  displayname_suffix: "&7[%level%]"
   
-  title_header: "&6&lДобро пожаловать, %customui_player_name%!"
-  title_subtitle: "&7Ранг: &f%customui_luckperms_primary_group% &7| Сервер: &f%customui_server_name%"
+  title_header: "&6&lДобро пожаловать, %player%!"
+  title_subtitle: "&7На сервер %server_name%"
