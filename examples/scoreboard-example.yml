@@ -1,0 +1,32 @@
+# Пример конфигурации меню для настройки скорборда
+title: "Настройка Скорборда"
+description: "Выберите стиль для вашего скорборда"
+type: "scoreboard"
+
+# Настройки по умолчанию
+options:
+  title: "&6&lВаш Сервер"
+  lines:
+    - "&7━━━━━━━━━━━━━━━━━━"
+    - "&6Игрок: &f%player%"
+    - "&6Уровень: &f%level%"
+    - "&6Баланс: &f%balance%"
+    - "&7━━━━━━━━━━━━━━━━━━"
+
+# Команды, выполняемые при выборе опций
+actions:
+  title: "scoreboard_title %title%"
+  lines: "scoreboard_lines %lines%"
+  apply: "scoreboard_apply"
+  reset: "scoreboard_reset"
+
+# Дополнительные настройки
+settings:
+  # Разрешить игрокам изменять настройки
+  allow-modification: true
+  
+  # Автоматически применять изменения
+  auto-apply: false
+  
+  # Показывать предварительный просмотр
+  show-preview: true

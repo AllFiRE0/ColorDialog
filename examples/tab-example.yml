@@ -1,0 +1,27 @@
+# Пример конфигурации меню для настройки таба
+title: "Настройка Таба"
+description: "Выберите стиль для вашего таба"
+type: "tab"
+
+# Настройки по умолчанию
+options:
+  header: "&6&lВаш Таб"
+  footer: "&7Добро пожаловать на сервер!"
+
+# Команды, выполняемые при выборе опций
+actions:
+  header: "tab_header %header%"
+  footer: "tab_footer %footer%"
+  apply: "tab_apply"
+  reset: "tab_reset"
+
+# Дополнительные настройки
+settings:
+  # Разрешить игрокам изменять настройки
+  allow-modification: true
+  
+  # Автоматически применять изменения
+  auto-apply: false
+  
+  # Показывать предварительный просмотр
+  show-preview: true

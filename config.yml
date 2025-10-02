@@ -1,0 +1,83 @@
+# CustomUI Plugin Configuration
+# Основные настройки плагина
+
+# Включить ли плагин
+enabled: true
+
+# Язык сообщений (ru/en)
+language: "ru"
+
+# Настройки по умолчанию
+defaults:
+  # Разрешить игрокам открывать меню для себя
+  allow-self-menu: true
+  
+  # Разрешить администраторам открывать меню для других игроков
+  allow-admin-menu: true
+  
+  # Автоматически применять настройки при выборе
+  auto-apply: false
+
+# Настройки меню
+menus:
+  # Включить стандартные меню
+  enable-default-menus: true
+  
+  # Папка для пользовательских меню
+  custom-menus-folder: "menus"
+  
+  # Максимальное количество пользовательских меню
+  max-custom-menus: 50
+
+# Настройки команд
+commands:
+  # Основная команда
+  main-command: "customui"
+  
+  # Алиасы команды
+  aliases:
+    - "cui"
+    - "ui"
+  
+  # Разрешить выполнение команд из консоли
+  allow-console: true
+
+# Настройки прав
+permissions:
+  # Базовые права
+  use: "customui.use"
+  admin: "customui.admin"
+  
+  # Права для конкретных меню
+  menu-tab: "customui.menu.tab"
+  menu-chat: "customui.menu.chat"
+  menu-scoreboard: "customui.menu.scoreboard"
+  menu-displayname: "customui.menu.displayname"
+  menu-title: "customui.menu.title"
+
+# Настройки сообщений
+messages:
+  # Общие сообщения
+  no-permission: "&cУ вас нет прав для выполнения этой команды!"
+  player-not-found: "&cИгрок '%player%' не найден!"
+  menu-not-found: "&cМеню '%menu%' не найдено!"
+  config-reloaded: "&aКонфигурация плагина перезагружена!"
+  config-reload-error: "&cОшибка при перезагрузке: %error%"
+  
+  # Сообщения меню
+  menu-opened: "&aМеню '%menu%' открыто!"
+  menu-closed: "&7Меню закрыто."
+  settings-applied: "&aНастройки применены!"
+  settings-reset: "&eНастройки сброшены!"
+  settings-cancelled: "&cНастройки отменены!"
+
+# Настройки логирования
+logging:
+  # Уровень логирования (DEBUG, INFO, WARN, ERROR)
+  level: "INFO"
+  
+  # Логировать действия игроков
+  log-player-actions: true
+  
+  # Логировать ошибки
+  log-errors: true

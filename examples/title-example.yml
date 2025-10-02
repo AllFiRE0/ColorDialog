@@ -1,0 +1,36 @@
+# Пример конфигурации меню для настройки титулов
+title: "Настройка Титулов"
+description: "Выберите стиль для ваших титулов"
+type: "title"
+
+# Настройки по умолчанию
+options:
+  header: "&6&lДобро пожаловать!"
+  subtitle: "&7На сервер!"
+  timing: "normal"
+  effect: "fadein"
+
+# Команды, выполняемые при выборе опций
+actions:
+  header: "title_header %header%"
+  subtitle: "title_subtitle %subtitle%"
+  timing: "title_timing %timing%"
+  effect: "title_effect %effect%"
+  apply: "title_apply"
+  reset: "title_reset"
+
+# Дополнительные настройки
+settings:
+  # Разрешить игрокам изменять настройки
+  allow-modification: true
+  
+  # Автоматически применять изменения
+  auto-apply: false
+  
+  # Показывать предварительный просмотр
+  show-preview: true
+  
+  # Время отображения титула (в тиках)
+  fade-in: 20
+  stay: 60
+  fade-out: 20

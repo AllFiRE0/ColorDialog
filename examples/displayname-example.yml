@@ -1,0 +1,29 @@
+# Пример конфигурации меню для настройки ника над головой
+title: "Настройка Ника"
+description: "Выберите цвет для вашего ника"
+type: "displayname"
+
+# Настройки по умолчанию
+options:
+  prefix: "&6[VIP]"
+  suffix: "&7[Level %level%]"
+  color: "&f"
+
+# Команды, выполняемые при выборе опций
+actions:
+  prefix: "displayname_prefix %prefix%"
+  suffix: "displayname_suffix %suffix%"
+  color: "displayname_color %color%"
+  apply: "displayname_apply"
+  reset: "displayname_reset"
+
+# Дополнительные настройки
+settings:
+  # Разрешить игрокам изменять настройки
+  allow-modification: true
+  
+  # Автоматически применять изменения
+  auto-apply: false
+  
+  # Показывать предварительный просмотр
+  show-preview: true
