@@ -22,161 +22,109 @@ public class TitleMenuDialog extends BaseMenuDialog {
     
     @Override
     protected void addButtons(DialogBuilder builder, Player player) {
-        // Кнопки для настройки заголовка титула
-        builder.button(createButton("🟥 Красный Заголовок", NamedTextColor.RED), 
+        // Кнопки для выбора титулов-рангов
+        builder.button(createButton("👤 Игрок", NamedTextColor.WHITE), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&c&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на красный цвет!");
+                    setPlayerTitle(player, "Игрок", "&7[Игрок]");
+                    sendMessage(player, "Титул установлен: Игрок");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟦 Синий Заголовок", NamedTextColor.BLUE), 
+        builder.button(createButton("⭐ VIP", NamedTextColor.GOLD), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&9&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на синий цвет!");
+                    setPlayerTitle(player, "VIP", "&6[VIP]");
+                    sendMessage(player, "Титул установлен: VIP");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟨 Желтый Заголовок", NamedTextColor.YELLOW), 
+        builder.button(createButton("💎 Премиум", NamedTextColor.LIGHT_PURPLE), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&e&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на желтый цвет!");
+                    setPlayerTitle(player, "Премиум", "&d[Премиум]");
+                    sendMessage(player, "Титул установлен: Премиум");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟧 Оранжевый Заголовок", NamedTextColor.GOLD), 
+        builder.button(createButton("👑 Король", NamedTextColor.YELLOW), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&6&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на оранжевый цвет!");
+                    setPlayerTitle(player, "Король", "&e[Король]");
+                    sendMessage(player, "Титул установлен: Король");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟩 Зеленый Заголовок", NamedTextColor.GREEN), 
+        builder.button(createButton("🛡️ Модератор", NamedTextColor.BLUE), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&a&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на зеленый цвет!");
+                    setPlayerTitle(player, "Модератор", "&9[Модератор]");
+                    sendMessage(player, "Титул установлен: Модератор");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟪 Фиолетовый Заголовок", NamedTextColor.LIGHT_PURPLE), 
+        builder.button(createButton("⚡ Администратор", NamedTextColor.RED), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&d&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на фиолетовый цвет!");
+                    setPlayerTitle(player, "Администратор", "&c[Администратор]");
+                    sendMessage(player, "Титул установлен: Администратор");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟫 Коричневый Заголовок", NamedTextColor.DARK_RED), 
+        builder.button(createButton("🌟 Владелец", NamedTextColor.DARK_RED), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&4&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на коричневый цвет!");
+                    setPlayerTitle(player, "Владелец", "&4[Владелец]");
+                    sendMessage(player, "Титул установлен: Владелец");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("⬛ Черный Заголовок", NamedTextColor.DARK_GRAY), 
+        builder.button(createButton("🎯 Специалист", NamedTextColor.GREEN), 
                 (clicker, result) -> {
-                    setTitleHeader(player, "&0&lДобро пожаловать!");
-                    sendMessage(player, "Заголовок титула установлен на черный цвет!");
+                    setPlayerTitle(player, "Специалист", "&a[Специалист]");
+                    sendMessage(player, "Титул установлен: Специалист");
                     return Dialog.ActionResult.close();
                 });
         
-        // Кнопки для настройки подзаголовка титула
-        builder.button(createButton("🟥 Красный Подзаголовок", NamedTextColor.RED), 
+        builder.button(createButton("🔧 Разработчик", NamedTextColor.DARK_GRAY), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&cНа сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на красный цвет!");
+                    setPlayerTitle(player, "Разработчик", "&8[Разработчик]");
+                    sendMessage(player, "Титул установлен: Разработчик");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟦 Синий Подзаголовок", NamedTextColor.BLUE), 
+        builder.button(createButton("🎨 Дизайнер", NamedTextColor.LIGHT_PURPLE), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&9На сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на синий цвет!");
+                    setPlayerTitle(player, "Дизайнер", "&d[Дизайнер]");
+                    sendMessage(player, "Титул установлен: Дизайнер");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟨 Желтый Подзаголовок", NamedTextColor.YELLOW), 
+        builder.button(createButton("📝 Писатель", NamedTextColor.YELLOW), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&eНа сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на желтый цвет!");
+                    setPlayerTitle(player, "Писатель", "&e[Писатель]");
+                    sendMessage(player, "Титул установлен: Писатель");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟧 Оранжевый Подзаголовок", NamedTextColor.GOLD), 
+        builder.button(createButton("🎵 Музыкант", NamedTextColor.GREEN), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&6На сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на оранжевый цвет!");
+                    setPlayerTitle(player, "Музыкант", "&a[Музыкант]");
+                    sendMessage(player, "Титул установлен: Музыкант");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟩 Зеленый Подзаголовок", NamedTextColor.GREEN), 
+        builder.button(createButton("🏆 Чемпион", NamedTextColor.GOLD), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&aНа сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на зеленый цвет!");
+                    setPlayerTitle(player, "Чемпион", "&6[Чемпион]");
+                    sendMessage(player, "Титул установлен: Чемпион");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟪 Фиолетовый Подзаголовок", NamedTextColor.LIGHT_PURPLE), 
+        builder.button(createButton("🔥 Легенда", NamedTextColor.RED), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&dНа сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на фиолетовый цвет!");
+                    setPlayerTitle(player, "Легенда", "&c[Легенда]");
+                    sendMessage(player, "Титул установлен: Легенда");
                     return Dialog.ActionResult.close();
                 });
         
-        builder.button(createButton("🟫 Коричневый Подзаголовок", NamedTextColor.DARK_RED), 
+        builder.button(createButton("💫 Мастер", NamedTextColor.LIGHT_PURPLE), 
                 (clicker, result) -> {
-                    setTitleSubtitle(player, "&4На сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на коричневый цвет!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        builder.button(createButton("⬛ Черный Подзаголовок", NamedTextColor.DARK_GRAY), 
-                (clicker, result) -> {
-                    setTitleSubtitle(player, "&0На сервер!");
-                    sendMessage(player, "Подзаголовок титула установлен на черный цвет!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        // Кнопки для настройки времени отображения титула
-        builder.button(createButton("⏱️ Быстрое Отображение", NamedTextColor.YELLOW), 
-                (clicker, result) -> {
-                    setTitleTiming(player, "fast");
-                    sendMessage(player, "Время отображения титула установлено на быстрое!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        builder.button(createButton("⏰ Обычное Отображение", NamedTextColor.GREEN), 
-                (clicker, result) -> {
-                    setTitleTiming(player, "normal");
-                    sendMessage(player, "Время отображения титула установлено на обычное!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        builder.button(createButton("⏳ Медленное Отображение", NamedTextColor.BLUE), 
-                (clicker, result) -> {
-                    setTitleTiming(player, "slow");
-                    sendMessage(player, "Время отображения титула установлено на медленное!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        // Кнопки для настройки эффектов титула
-        builder.button(createButton("✨ Эффект Fade In", NamedTextColor.LIGHT_PURPLE), 
-                (clicker, result) -> {
-                    setTitleEffect(player, "fadein");
-                    sendMessage(player, "Эффект титула установлен на Fade In!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        builder.button(createButton("🌟 Эффект Fade Out", NamedTextColor.GOLD), 
-                (clicker, result) -> {
-                    setTitleEffect(player, "fadeout");
-                    sendMessage(player, "Эффект титула установлен на Fade Out!");
-                    return Dialog.ActionResult.close();
-                });
-        
-        builder.button(createButton("💫 Эффект Stay", NamedTextColor.GREEN), 
-                (clicker, result) -> {
-                    setTitleEffect(player, "stay");
-                    sendMessage(player, "Эффект титула установлен на Stay!");
+                    setPlayerTitle(player, "Мастер", "&d[Мастер]");
+                    sendMessage(player, "Титул установлен: Мастер");
                     return Dialog.ActionResult.close();
                 });
         
@@ -202,31 +150,10 @@ public class TitleMenuDialog extends BaseMenuDialog {
                 });
     }
     
-    private void setTitleHeader(Player player, String header) {
-        String action = getString("actions.header", "");
+    private void setPlayerTitle(Player player, String titleName, String titlePrefix) {
+        String action = getString("actions.set_title", "");
         if (!action.isEmpty()) {
-            executeAction(player, action.replace("%header%", header));
-        }
-    }
-    
-    private void setTitleSubtitle(Player player, String subtitle) {
-        String action = getString("actions.subtitle", "");
-        if (!action.isEmpty()) {
-            executeAction(player, action.replace("%subtitle%", subtitle));
-        }
-    }
-    
-    private void setTitleTiming(Player player, String timing) {
-        String action = getString("actions.timing", "");
-        if (!action.isEmpty()) {
-            executeAction(player, action.replace("%timing%", timing));
-        }
-    }
-    
-    private void setTitleEffect(Player player, String effect) {
-        String action = getString("actions.effect", "");
-        if (!action.isEmpty()) {
-            executeAction(player, action.replace("%effect%", effect));
+            executeAction(player, action.replace("%title%", titleName).replace("%prefix%", titlePrefix));
         }
     }
     

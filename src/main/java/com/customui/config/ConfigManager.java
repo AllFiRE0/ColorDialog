@@ -175,18 +175,13 @@ public class ConfigManager {
                 FileConfiguration titleConfig = YamlConfiguration.loadConfiguration(titleFile);
                 
                 titleConfig.set("title", "Настройка Титулов");
-                titleConfig.set("description", "Выберите стиль для ваших титулов");
+                titleConfig.set("description", "Выберите титул для вашего игрока");
                 titleConfig.set("type", "title");
                 
-                titleConfig.set("options.header", "&6&lДобро пожаловать!");
-                titleConfig.set("options.subtitle", "&7На сервер!");
-                titleConfig.set("options.timing", "normal");
-                titleConfig.set("options.effect", "fadein");
+                titleConfig.set("options.default_title", "Игрок");
+                titleConfig.set("options.default_prefix", "&7[Игрок]");
                 
-                titleConfig.set("actions.header", "title_header %header%");
-                titleConfig.set("actions.subtitle", "title_subtitle %subtitle%");
-                titleConfig.set("actions.timing", "title_timing %timing%");
-                titleConfig.set("actions.effect", "title_effect %effect%");
+                titleConfig.set("actions.set_title", "title_set %title% %prefix%");
                 titleConfig.set("actions.apply", "title_apply");
                 titleConfig.set("actions.reset", "title_reset");
                 
