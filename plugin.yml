@@ -21,3 +21,6 @@ permissions:
   customui.admin:
     description: Allows opening menus for other players
     default: op
+  customui.menu.title:
+    description: Allows using title menu
+    default: true

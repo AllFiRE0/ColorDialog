@@ -53,6 +53,7 @@ permissions:
   menu-chat: "customui.menu.chat"
   menu-scoreboard: "customui.menu.scoreboard"
   menu-displayname: "customui.menu.displayname"
+  menu-title: "customui.menu.title"
 
 # Настройки сообщений
 messages:

@@ -6,6 +6,7 @@ import com.customui.menu.dialogs.TabMenuDialog;
 import com.customui.menu.dialogs.ChatMenuDialog;
 import com.customui.menu.dialogs.ScoreboardMenuDialog;
 import com.customui.menu.dialogs.DisplayNameMenuDialog;
+import com.customui.menu.dialogs.TitleMenuDialog;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public class MenuManager {
         menuDialogs.put("chat", new ChatMenuDialog(plugin, configManager));
         menuDialogs.put("scoreboard", new ScoreboardMenuDialog(plugin, configManager));
         menuDialogs.put("displayname", new DisplayNameMenuDialog(plugin, configManager));
+        menuDialogs.put("title", new TitleMenuDialog(plugin, configManager));
         
         // Загрузка пользовательских меню из конфигурации
         loadCustomMenus();
@@ -66,6 +68,8 @@ public class MenuManager {
                 return new ScoreboardMenuDialog(plugin, configManager, config);
             case "displayname":
                 return new DisplayNameMenuDialog(plugin, configManager, config);
+            case "title":
+                return new TitleMenuDialog(plugin, configManager, config);
             default:
                 return new CustomMenuDialog(plugin, configManager, menuName, config);
         }

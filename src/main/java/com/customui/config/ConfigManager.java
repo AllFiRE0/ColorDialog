@@ -56,6 +56,7 @@ public class ConfigManager {
         createChatMenuConfig();
         createScoreboardMenuConfig();
         createDisplayNameMenuConfig();
+        createTitleMenuConfig();
     }
     
     private void createTabMenuConfig() {
@@ -162,6 +163,37 @@ public class ConfigManager {
                 menuConfigs.put("displayname", displayNameConfig);
             } catch (IOException e) {
                 plugin.getLogger().severe("Could not create displayname menu config: " + e.getMessage());
+            }
+        }
+    }
+    
+    private void createTitleMenuConfig() {
+        File titleFile = new File(plugin.getDataFolder(), "menus/title.yml");
+        if (!titleFile.exists()) {
+            try {
+                titleFile.createNewFile();
+                FileConfiguration titleConfig = YamlConfiguration.loadConfiguration(titleFile);
+                
+                titleConfig.set("title", "Настройка Титулов");
+                titleConfig.set("description", "Выберите стиль для ваших титулов");
+                titleConfig.set("type", "title");
+                
+                titleConfig.set("options.header", "&6&lДобро пожаловать!");
+                titleConfig.set("options.subtitle", "&7На сервер!");
+                titleConfig.set("options.timing", "normal");
+                titleConfig.set("options.effect", "fadein");
+                
+                titleConfig.set("actions.header", "title_header %header%");
+                titleConfig.set("actions.subtitle", "title_subtitle %subtitle%");
+                titleConfig.set("actions.timing", "title_timing %timing%");
+                titleConfig.set("actions.effect", "title_effect %effect%");
+                titleConfig.set("actions.apply", "title_apply");
+                titleConfig.set("actions.reset", "title_reset");
+                
+                titleConfig.save(titleFile);
+                menuConfigs.put("title", titleConfig);
+            } catch (IOException e) {
+                plugin.getLogger().severe("Could not create title menu config: " + e.getMessage());
             }
         }
     }
