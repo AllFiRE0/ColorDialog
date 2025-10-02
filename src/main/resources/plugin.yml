@@ -24,3 +24,6 @@ permissions:
   customui.menu.title:
     description: Allows using title menu
     default: true
+  customui.menu.viewdistance:
+    description: Allows using view distance menu
+    default: true

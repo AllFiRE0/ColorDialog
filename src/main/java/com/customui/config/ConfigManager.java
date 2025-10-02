@@ -57,6 +57,7 @@ public class ConfigManager {
         createScoreboardMenuConfig();
         createDisplayNameMenuConfig();
         createTitleMenuConfig();
+        createViewDistanceMenuConfig();
     }
     
     private void createTabMenuConfig() {
@@ -189,6 +190,33 @@ public class ConfigManager {
                 menuConfigs.put("title", titleConfig);
             } catch (IOException e) {
                 plugin.getLogger().severe("Could not create title menu config: " + e.getMessage());
+            }
+        }
+    }
+    
+    private void createViewDistanceMenuConfig() {
+        File viewDistanceFile = new File(plugin.getDataFolder(), "menus/viewdistance.yml");
+        if (!viewDistanceFile.exists()) {
+            try {
+                viewDistanceFile.createNewFile();
+                FileConfiguration viewDistanceConfig = YamlConfiguration.loadConfiguration(viewDistanceFile);
+                
+                viewDistanceConfig.set("title", "Настройка Дистанции Видимости");
+                viewDistanceConfig.set("description", "Выберите максимальную дистанцию видимости (8-24 чанка)");
+                viewDistanceConfig.set("type", "viewdistance");
+                
+                viewDistanceConfig.set("options.default_distance", 12);
+                viewDistanceConfig.set("options.min_distance", 8);
+                viewDistanceConfig.set("options.max_distance", 24);
+                
+                viewDistanceConfig.set("actions.set_distance", "viewdistance_set %distance%");
+                viewDistanceConfig.set("actions.apply", "viewdistance_apply");
+                viewDistanceConfig.set("actions.reset", "viewdistance_reset");
+                
+                viewDistanceConfig.save(viewDistanceFile);
+                menuConfigs.put("viewdistance", viewDistanceConfig);
+            } catch (IOException e) {
+                plugin.getLogger().severe("Could not create viewdistance menu config: " + e.getMessage());
             }
         }
     }

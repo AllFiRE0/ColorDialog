@@ -54,6 +54,7 @@ permissions:
   menu-scoreboard: "customui.menu.scoreboard"
   menu-displayname: "customui.menu.displayname"
   menu-title: "customui.menu.title"
+  menu-viewdistance: "customui.menu.viewdistance"
 
 # Настройки сообщений
 messages:
