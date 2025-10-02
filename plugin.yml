@@ -1,0 +1,23 @@
+name: CustomUI
+version: 1.0.0
+main: com.customui.CustomUIPlugin
+api-version: 1.21
+depend: [Paper]
+description: Custom UI plugin using Paper Dialog API
+author: CustomUI Team
+website: https://github.com/customui/customui
+
+commands:
+  customui:
+    description: Main command for CustomUI plugin
+    usage: /customui <menu> [player]
+    permission: customui.use
+    aliases: [cui, ui]
+
+permissions:
+  customui.use:
+    description: Allows using CustomUI commands
+    default: true
+  customui.admin:
+    description: Allows opening menus for other players
+    default: op
