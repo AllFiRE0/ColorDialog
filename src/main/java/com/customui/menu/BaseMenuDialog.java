@@ -86,13 +86,15 @@ public abstract class BaseMenuDialog {
             return;
         }
         
+        // Парсинг плейсхолдеров в действии
+        String parsedAction = plugin.parsePlaceholders(player, action);
+        
         // Выполнение команды от имени игрока
-        if (action.startsWith("/")) {
-            player.performCommand(action.substring(1));
+        if (parsedAction.startsWith("/")) {
+            player.performCommand(parsedAction.substring(1));
         } else {
             // Выполнение команды от имени консоли
-            plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), 
-                    action.replace("%player%", player.getName()));
+            plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), parsedAction);
         }
     }
     

@@ -72,6 +72,26 @@ messages:
   settings-reset: "&eНастройки сброшены!"
   settings-cancelled: "&cНастройки отменены!"
 
+# Настройки интеграций
+integrations:
+  # PlaceholderAPI интеграция
+  placeholderapi:
+    enabled: true
+    # Автоматически парсить плейсхолдеры в сообщениях
+    auto-parse: true
+    # Кэшировать результаты плейсхолдеров
+    cache-results: true
+    # Время кэширования в миллисекундах
+    cache-duration: 5000
+  
+  # LuckPerms интеграция
+  luckperms:
+    enabled: true
+    # Автоматически обновлять префиксы/суффиксы
+    auto-update: true
+    # Использовать LuckPerms для проверки прав
+    use-permissions: true
+
 # Настройки логирования
 logging:
   # Уровень логирования (DEBUG, INFO, WARN, ERROR)
@@ -82,3 +102,6 @@ logging:
   
   # Логировать ошибки
   log-errors: true
+  
+  # Логировать интеграции
+  log-integrations: true

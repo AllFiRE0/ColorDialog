@@ -3,7 +3,8 @@ version: 1.0.0
 main: com.customui.CustomUIPlugin
 api-version: 1.21
 depend: [Paper]
-description: Custom UI plugin using Paper Dialog API
+softdepend: [PlaceholderAPI, LuckPerms]
+description: Custom UI plugin using Paper Dialog API with PlaceholderAPI and LuckPerms support
 author: CustomUI Team
 website: https://github.com/customui/customui
 
